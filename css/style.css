@@ -1,0 +1,228 @@
+/* ==========================================================================
+   Oniva – CF7 Entries Admin Page
+   Plugin: Oniva Forms Webhook
+   ========================================================================== */
+
+/* ── Page wrapper ── */
+#oniva-entries-wrap {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+/* ── Toolbar (search + filter row) ── */
+#oniva-entries-wrap .oniva-toolbar {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+    flex-wrap: wrap;
+}
+
+#oniva-entries-wrap .oniva-search {
+    padding: 6px 10px;
+    border: 1px solid #c3c4c7;
+    border-radius: 4px;
+    font-size: 13px;
+    min-width: 220px;
+}
+
+#oniva-entries-wrap .oniva-form-select {
+    padding: 6px 10px;
+    border: 1px solid #c3c4c7;
+    border-radius: 4px;
+    font-size: 13px;
+}
+
+#oniva-entries-wrap .oniva-count-badge {
+    margin-left: auto;
+    font-size: 12px;
+    color: #646970;
+}
+
+/* ── Table wrapper ── */
+.oniva-table-wrap {
+    overflow-x: auto;
+}
+
+/* ── Entries table ── */
+.oniva-entries-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+    background: #fff;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.oniva-entries-table thead th {
+    background: #f6f7f7;
+    color: #2c3338;
+    font-weight: 600;
+    padding: 10px 14px;
+    text-align: left;
+    border-bottom: 1px solid #e0e0e0;
+    white-space: nowrap;
+}
+
+.oniva-entries-table tbody tr {
+    border-bottom: 1px solid #f0f0f1;
+}
+
+.oniva-entries-table tbody tr:last-child {
+    border-bottom: none;
+}
+
+.oniva-entries-table tbody tr:hover {
+    background: #f9f9f9;
+}
+
+.oniva-entries-table td {
+    padding: 10px 14px;
+    vertical-align: top;
+    color: #3c434a;
+}
+
+.oniva-entries-table td.oniva-date {
+    white-space: nowrap;
+    color: #646970;
+    font-size: 12px;
+}
+
+.oniva-entries-table td.oniva-form-title {
+    font-weight: 500;
+}
+
+/* ── Field pills (horizontal preview) ── */
+.oniva-fields-preview {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 6px;
+}
+
+.oniva-field-pill-wrap {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 4px;
+    background: #f0f6fc;
+    border: 1px solid #c5d9ed;
+    border-radius: 4px;
+    padding: 3px 9px;
+    font-size: 12px;
+    white-space: nowrap;
+    max-width: 220px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.oniva-field-pill-wrap .oniva-field-label {
+    color: #646970;
+    font-size: 11px;
+    flex-shrink: 0;
+}
+
+.oniva-field-pill-wrap .oniva-field-value {
+    color: #0a4480;
+    font-weight: 500;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* ── Standalone label / value (legacy) ── */
+.oniva-field-label {
+    color: #646970;
+    font-size: 11px;
+}
+
+.oniva-field-value {
+    font-size: 12px;
+}
+
+/* ── "Show all N fields" toggle link ── */
+.oniva-entry-toggle {
+    cursor: pointer;
+    color: #2271b1;
+    font-size: 11px;
+    margin-left: 6px;
+    white-space: nowrap;
+}
+
+/* ── Expandable full-fields detail panel ── */
+.oniva-fields-detail {
+    display: none;
+    margin-top: 8px;
+}
+
+.oniva-fields-detail.open {
+    display: block;
+}
+
+.oniva-fields-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 8px;
+}
+
+.oniva-field-card {
+    background: #f6f7f7;
+    border-radius: 4px;
+    padding: 8px 10px;
+}
+
+.oniva-field-card .label {
+    font-size: 11px;
+    color: #646970;
+    margin-bottom: 2px;
+}
+
+.oniva-field-card .value {
+    font-size: 13px;
+    color: #2c3338;
+    word-break: break-word;
+}
+
+/* ── Empty state ── */
+.oniva-empty {
+    text-align: center;
+    padding: 40px 20px;
+    color: #646970;
+}
+
+/* ── Pagination ── */
+.oniva-pagination {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 16px;
+    flex-wrap: wrap;
+}
+
+.oniva-pagination .page-numbers {
+    display: inline-block;
+    padding: 5px 10px;
+    border: 1px solid #c3c4c7;
+    border-radius: 3px;
+    font-size: 13px;
+    color: #2271b1;
+    text-decoration: none;
+    background: #fff;
+}
+
+.oniva-pagination .page-numbers.current {
+    background: #2271b1;
+    color: #fff;
+    border-color: #2271b1;
+}
+
+.oniva-pagination .page-numbers:hover:not(.current) {
+    background: #f0f0f1;
+}
+
+/* ── CF7 not active notice ── */
+.oniva-no-cf7 {
+    background: #fff8e1;
+    border-left: 4px solid #ffb900;
+    padding: 16px 20px;
+    border-radius: 0 4px 4px 0;
+    margin-top: 20px;
+}
